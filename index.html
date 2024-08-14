@@ -1,0 +1,291 @@
+<html><head>
+    <title>Resume</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" href="https://staticappstorage12.blob.core.windows.net/$web/Style.css" media="screen"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+       <meta name="language" content="English">
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <meta property="og:locale" content="en_US">
+          <meta property="og:type" content="website">
+
+          <meta name="description" content="Cloud resume challange Aditya">
+
+                    
+
+      <meta name="keywords" content="Site made possible by Azure storage, Azure functions and Azure CosmosDB">
+
+
+      <meta property="og:title" content="Made in reference with Cloud resume challange made by David Brazeal">
+
+      <meta property="og:description" content="Counting visitors.
+    ">
+      <meta property="og:url" content="https://mdaqil.tk/">
+
+      <meta property="og:image" content="https://mdaqil.tk/img/main-screen.jpg">
+
+     
+
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-111268069-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-111268069-2');
+    </script>
+ 
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Increment Count</title>
+     </head>
+     <body>
+         <h1 style="text-align:center">Counting the website visits using the api</h1>
+         <p style ="text-align:center">Current Count: <span id="count">0</span></p>
+         <h4 style="text-align:center">This site is hosted in azure storage as static website using Github actions and for the backend its using azure functions using javascript and azure cosmosDB for the database where the count is stored.</h4>
+     
+         <script>
+          async function incrementCount() {
+              try {
+                  // Make the POST request to your Azure Function
+                  const response = await fetch('https://forresumeaditya.azurewebsites.net/api/trigger?', {
+                      method: 'POST',
+                      headers: {
+                          'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({ id: 'name' }) // Ensure this matches the expected input for your function
+                  });
+  
+                  if (!response.ok) {
+                      throw new Error(`HTTP error! status: ${response.status}`);
+                  }
+  
+                  // Parse the response JSON
+                  const result = await response.json();
+  
+                  // Update the count on the webpage
+                  document.getElementById('count').textContent = result.updatedCount;
+              } catch (error) {
+                  console.error('Error:', error);
+                  alert('Error updating count: ' + error.message);
+              }
+          }
+  
+          // Increment the count when the page loads
+          window.onload = incrementCount;
+      </script>
+     </body>
+     </html>
+     
+
+</head>
+
+  
+  <body>
+  
+  <div class="resmue-container">
+      <nav>
+      <a href="index.html">Home</a>
+      <a href="#" onclick="print()">Print</a>
+    </nav>
+<div style="display: flex;">
+  <aside>
+    <section class="text-center" style="padding:0">
+      <img src="https://i.pinimg.com/736x/ab/60/9e/ab609e0f0d0b5c31beb7d4e97ea00f8f.jpg" alt="Lamp" width="100" height="100">
+      <h2 style="margin-bottom: 5px">Adita Mehta</h2>
+      <small class="text-muted">Cloud and Security enthusiast</small>
+      <p class="text-muted">
+         <small>
+        <b>Phone:</b>9350114191</small>
+      </p>
+     <p class="text-muted">
+        <small>
+        <b>Email:</b> mehta.aditya777@gmail.com
+          
+        </small>
+     </p>
+       
+      
+    </section>
+    <section>
+      <h3 class="line-title center">About Me</h3>
+      <p class="read">Always up for a challenge for
+        learning and understanding
+        new concepts and technology
+        whether it be in cloud or
+        security, I think of myself as a
+        inquisitive person who if can't
+        solve a problem, can't sleep.
+        Past few years i have been
+        teaching and learning myself
+        new concepts in cloud and
+        security. Now i would like to
+        begin working with real world
+        projects with the knowledge i
+        acquired over time.
+        
+</p>
+    </section>
+     <section>
+        <h3 class="line-title center">Skills</h3>
+        <ul class="skill-list">
+                    <li>Cloud infrastructure</li>
+                    <li>linux admin</li>
+                    <li>Python,javascript</li>
+                    <li>IAC</li>
+                    <li>Pentesting with Kali</li>
+                    <li>Security</li>
+                    <li>SPL and KQL</li>
+          <h3 class="line-title center">Azure Skills</h3>
+          <u2 class="skill-list">
+                   <li>Azure Sentinel and Defender for cloud</li>
+                   <li>Azure container Appa</li>
+                   <li>Azure Functions</li>
+                   <li>Entra ID adminstration tasks</li>
+                   <li>IAC in azure ARM, BICEP</li>
+                   <u3 class="skill-list">
+                   <h3 class="line-title center">Other Skills</h3>
+                   <li>Proficient in English</li>
+                   <li>Part-time Guitarist</li>
+                    </ul>
+          <h3 class="line-title center">Education</h3>
+        <p class="read">
+          Completed few years in Bialytok university of technology in Computer science
+          Currently studing in Amity university with online mode to get my indian degree
+        </p>
+
+      </section>
+  </aside>
+  <main>
+    <section>
+      <h3 class="line-title">Objective</h3>
+      <article class="flex-group">
+      
+        <div class="full">
+          
+          <p class="read">Love everything about how things come to be in cloud. Although can be complex i find a little beauty in that and try to make myself better at understanding concepts with each project i do</p>
+        </div>
+      </article>
+    </section>
+      <section>
+
+      <h3 class="line-title">Experience <small class="text-muted">1 year</small></h3>
+
+      <article class="flex-group">
+
+        <div class="short">
+          <h4>Komfort PL</h4>
+          <p>
+            Strykow, Lodz, Poland
+         </p><hr>
+         <small>
+          01-05-2018 to 4-07-2019
+            </small>
+        <p></p>
+        </div>
+
+        <div class="full">
+          <a href="http://edunuts.com">Junior IT Support staff</a>
+          <p class="read">
+      My resonsibilties included onboarding of new employees in IT system and providing continous IT support to Emloyees working  
+          </p>
+        </div>
+      </article>
+
+
+        <article class="flex-group">
+        <div class="short">
+          <h4>Udemy.com</h4>
+          <p>
+            Udemy inc, USA
+            </p><hr>
+            <small>
+              
+            November-2022 - Currently
+            </small>
+          <p></p>
+        </div>
+        <div class="full">
+          <a href="http://bigly.io">Instructor</a>
+          <p class="read">
+          I made several lesson and practice test for cloud and security exams on Udemy. I like teaching because it compels me to learn as well which is amazing.
+          </p>
+        </div>
+      </article>
+
+    </section>
+
+
+      <section>
+      <h3 class="line-title">Project Completed</h3>
+        <article class="flex-group">
+          <div class="short">
+            <h4><a href="">Cloud resume challange</a></h4>
+            <p>Azure Functions, Azure static site, Azure Cosmos DB, Azure CDN</p>
+          </div>
+          <div class="full">
+            
+            <p class="read">
+            One is best challanges for a beginner cloud engineer in my opinion, although i did it after i even got the Azure expert Solutions Architect certification but totally worth it
+            </p>
+             <hr>
+          </div>
+        </article>
+
+        
+
+
+         
+
+    </section>
+
+
+    
+    <section>
+      <h3 class="line-title">Certifications Done (clickable links)</h3>
+        <article class="flex-group">
+          <div class="short">
+            <h4><a href="https://learn.microsoft.com/api/credentials/share/en-us/Adityamehta777/73247F591B84C7D9?sharingId=7F485727BD9E1058">Azure Solutions Architect Expert</a></h4>
+
+          </div>
+          <div class="full">
+            
+            <p class="read">
+            Quite extensive study material on this though worth it totally
+            </p>
+             <hr>
+          </div>
+        </article>
+ 
+
+        <article class="flex-group">
+          <div class="short">
+            <h4><a href="https://learn.microsoft.com/api/credentials/share/en-us/Adityamehta777/73247F591B84C7D9?sharingId=7F485727BD9E1058"target="_blank">Azure Administrator Associate</a></h4>
+          </div>
+          <div class="full">
+            
+            <p class="read">
+           Pratical labs and lots of azure informatian with hand-on knowledge and quite vast area covered in this
+            </p>
+             <hr>
+          </div>
+        </article>
+
+        <h2>Real time monitoring of this resume site showing the amount of spikes per hour and the location from where the site is accessed shown as dashboard using KQL queries</h2>
+<img src="monitoring.png" alt="Trulli" width="800" height="500">
+
+    
+  </main>
+</div>
+  
+  </div>
